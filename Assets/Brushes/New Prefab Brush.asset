@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74790af7d4a4b1e429762e446842af64, type: 3}
-  m_Name: DirtBrush
+  m_Script: {fileID: 11500000, guid: 2d5751a2c961df945a34295ccf5e576d, type: 3}
+  m_Name: New Prefab Brush
   m_EditorClassIdentifier: 
   m_Cells:
   - m_Tile: {fileID: 0}
@@ -35,5 +35,6 @@ MonoBehaviour:
   m_Size: {x: 1, y: 1, z: 1}
   m_Pivot: {x: 0, y: 0, z: 0}
   m_CanChangeZPosition: 0
-  _prefab: {fileID: 4075964721137190357, guid: b98e40d82870e394699e6861e9984360, type: 3}
-  _anchor: {x: 0.5, y: 0.5, z: 0.5}
+  m_Anchor: {x: 0.5, y: 0.5, z: 0.5}
+  m_Prefab: {fileID: 4758617222190651024, guid: b98e40d82870e394699e6861e9984360,
+    type: 3}
