@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace TileMap2D.Brushes
 {
-    [CreateAssetMenu(fileName = "NewTilePrefabBrush", menuName = "TileMap2D/Brushes/Tile Prefab Brush")]
+    [CreateAssetMenu(fileName = "TilePrefabBrush", menuName = "TileMap2D/Brushes/Tile Prefab Brush")]
     [CustomGridBrush(false, true, false, "Tile Prefab Brush")]
     public class TilePrefabBrush : GridBrush
     {
@@ -34,7 +34,7 @@ namespace TileMap2D.Brushes
             foreach (var tilePrefab in GetTilePrefabsInCell(grid, brushTarget.transform, position))
             {
                 if (EraseAnyObjects || PrefabUtility.GetCorrespondingObjectFromSource(tilePrefab) == _prefab)
-                    Undo.DestroyObjectImmediate(tilePrefab);
+                    Undo.DestroyObjectImmediate(tilePrefab.gameObject);
             }
         }
 
@@ -59,7 +59,7 @@ namespace TileMap2D.Brushes
             if (instance != null)
             {
                 Undo.MoveGameObjectToScene(instance.gameObject, brushTarget.scene, "Paint Tile Prefab");
-                Undo.RegisterCreatedObjectUndo(instance, "Paint Tile Prefab");
+                Undo.RegisterCreatedObjectUndo(instance.gameObject, "Paint Tile Prefab");
                 instance.transform.SetParent(brushTarget.transform);
                 instance.transform.position = grid.LocalToWorld(grid.CellToLocalInterpolated(position + _anchor));
                 instance.Init();
