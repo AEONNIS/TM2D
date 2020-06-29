@@ -1,2 +1,2 @@
-# TilesMap2D
-Unity 2D game with tiles map.
+# TileMap2D
+Unity 2D game with tile map.
