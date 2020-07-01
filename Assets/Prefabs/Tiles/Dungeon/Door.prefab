@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4277734862070767873}
   - component: {fileID: 4924132745306308170}
   m_Layer: 0
-  m_Name: Floor
+  m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,4 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f4d4781b8e3bc439b336a0108d4802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: d0f92330d1cc630499115dbe95ab9c5c, type: 2}
+  _data: {fileID: 11400000, guid: 0ea644c88f8a3464ebc46d1acef097b9, type: 2}

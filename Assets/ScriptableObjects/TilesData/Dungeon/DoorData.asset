@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ad8cf9f62a1ee44a8a403b62e5424a1, type: 3}
-  m_Name: WallData
+  m_Name: DoorData
   m_EditorClassIdentifier: 
-  _id: Wl
-  _type: Wall
-  _name: "\u0421\u0442\u0435\u043D\u0430"
-  _description: "\u041F\u0440\u043E\u0447\u043D\u0430\u044F \u0441\u0442\u0435\u043D\u0430
-    \u043F\u043E\u0434\u0437\u0435\u043C\u0435\u043B\u044C\u044F"
+  _id: Dr
+  _type: Door
+  _name: "\u0414\u0432\u0435\u0440\u044C"
+  _description: "\u041F\u0440\u043E\u0447\u043D\u0430\u044F \u0434\u0432\u0435\u0440\u044C.
+    \u0411\u0435\u0437 \u043A\u043B\u044E\u0447\u0430 \u043D\u0435 \u043E\u0442\u043A\u0440\u044B\u0442\u044C."
   _passability: 0

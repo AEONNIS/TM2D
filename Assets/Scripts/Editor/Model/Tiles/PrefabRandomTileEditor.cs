@@ -4,8 +4,8 @@ using UnityEngine.Tilemaps;
 
 namespace TM2D.Editor.Model.Tiles
 {
-    [CustomEditor(typeof(PrefabTile))]
-    public class PrefabTileEditor : TerrainTileEditor
+    [CustomEditor(typeof(PrefabRandomTile))]
+    public class PrefabRandomTileEditor : RandomTileEditor
     {
         private SerializedObject _prefabTile;
         private SerializedProperty _prefab;
