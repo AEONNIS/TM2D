@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33199d3b504299c439e2bf2a3ea79797, type: 3}
+  m_Script: {fileID: 11500000, guid: abdd48718432cec4084f95c19721697a, type: 3}
   m_Name: DoorVerticalRandomTile
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 0}
@@ -36,4 +36,4 @@ MonoBehaviour:
   m_ColliderType: 1
   m_Sprites:
   - {fileID: -6790877635778163277, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
-  _prefab: {fileID: 4924132745306308170, guid: 2ead8b4382d70ac47aa042d9628fff41, type: 3}
+  _tileData: {fileID: 11400000, guid: 0ea644c88f8a3464ebc46d1acef097b9, type: 2}

@@ -1,23 +1,24 @@
 ﻿using TM2D.Model.Tiles;
 using UnityEditor;
+using UnityEngine.Tilemaps;
 
 namespace TM2D.Editor.Model.Tiles
 {
-    [CustomEditor(typeof(PrefabRuleTile))]
-    public class PrefabRuleTileEditor : RuleTileEditor
+    [CustomEditor(typeof(GameRandomTile))]
+    public class GameRandomTileEditor : RandomTileEditor
     {
-        private SerializedProperty _prefab;
+        private SerializedProperty _tileData;
 
         private new void OnEnable()
         {
-            _prefab = serializedObject.FindProperty(nameof(_prefab));
+            _tileData = serializedObject.FindProperty(nameof(_tileData));
             base.OnEnable();
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.UpdateIfRequiredOrScript();
-            EditorGUILayout.PropertyField(_prefab);
+            EditorGUILayout.PropertyField(_tileData);
             serializedObject.ApplyModifiedPropertiesWithoutUndo();
 
             EditorGUILayout.Space(10);

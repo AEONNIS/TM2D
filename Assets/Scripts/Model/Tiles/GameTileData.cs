@@ -2,8 +2,8 @@
 
 namespace TM2D.Model.Tiles
 {
-    [CreateAssetMenu(fileName = "TileData", menuName = "TM2D/Model/Tiles/TileData")]
-    public class TileData : ScriptableObject
+    [CreateAssetMenu(fileName = "GameTileData", menuName = "TM2D/Model/Tiles/GameTileData")]
+    public class GameTileData : ScriptableObject
     {
         [SerializeField] private string _id;
         [SerializeField] private string _type;

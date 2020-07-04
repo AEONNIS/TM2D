@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33199d3b504299c439e2bf2a3ea79797, type: 3}
+  m_Script: {fileID: 11500000, guid: abdd48718432cec4084f95c19721697a, type: 3}
   m_Name: FloorRandomTile
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 0}
@@ -51,4 +51,4 @@ MonoBehaviour:
   - {fileID: 7810936717752353743, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: 3419707775326841495, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: -7245433517681746672, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
-  _prefab: {fileID: 4924132745306308170, guid: ae8b7a0668df8b34cbff9454c07fc2f1, type: 3}
+  _tileData: {fileID: 11400000, guid: d0f92330d1cc630499115dbe95ab9c5c, type: 2}
