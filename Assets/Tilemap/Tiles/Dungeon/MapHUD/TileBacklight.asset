@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abdd48718432cec4084f95c19721697a, type: 3}
-  m_Name: DoorHorizontalRandomTile
+  m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: TileBacklight
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -1557013538026691241, guid: 6b7984068ad9b834ab1361f7fcf1af56,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,7 +35,3 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 2
-  m_Sprites:
-  - {fileID: -1995710985900991969, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
-  _tileData: {fileID: 11400000, guid: 0ea644c88f8a3464ebc46d1acef097b9, type: 2}
-  _ui: {fileID: 0}
