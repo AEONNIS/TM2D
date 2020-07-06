@@ -33,7 +33,7 @@ MonoBehaviour:
     e33: 1
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
-  m_ColliderType: 1
+  m_ColliderType: 2
   m_Sprites:
   - {fileID: 5441223297315994465, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: -3309781605116015348, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
@@ -52,3 +52,4 @@ MonoBehaviour:
   - {fileID: 3419707775326841495, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: -7245433517681746672, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   _tileData: {fileID: 11400000, guid: d0f92330d1cc630499115dbe95ab9c5c, type: 2}
+  _ui: {fileID: 0}

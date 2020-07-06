@@ -6,28 +6,24 @@ namespace TM2D.Presentation
     public class MapHUD : MonoBehaviour
     {
         [SerializeField] private Tilemap _hudTilemap;
-        [SerializeField] private Sprite _tileBacklightSprite;
-        [SerializeField] private Color _tileBacklightColor;
+        [SerializeField] private Tile _emptyTile;
+        [SerializeField] private Tile _tileBacklight;
+        [SerializeField] private Color _backlightColor;
 
-        private Tile _emptyTile;
-        private Tile _tileBacklight;
-        private Vector3Int _backlightedTilePosition;
+        private Vector3Int _backlightPosition;
 
         #region Unity
         private void Start()
         {
-            _emptyTile = ScriptableObject.CreateInstance<Tile>();
-            _tileBacklight = ScriptableObject.CreateInstance<Tile>();
-            _tileBacklight.sprite = _tileBacklightSprite;
-            _tileBacklight.color = _tileBacklightColor;
+            _tileBacklight.color = _backlightColor;
         }
         #endregion
 
         public void BacklightTile(Vector3Int gridPosition)
         {
-            _hudTilemap.SetTile(_backlightedTilePosition, _emptyTile);
-            _backlightedTilePosition = gridPosition;
-            _hudTilemap.SetTile(_backlightedTilePosition, _tileBacklight);
+            _hudTilemap.SetTile(_backlightPosition, _emptyTile);
+            _backlightPosition = gridPosition;
+            _hudTilemap.SetTile(_backlightPosition, _tileBacklight);
         }
     }
 }

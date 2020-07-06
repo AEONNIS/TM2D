@@ -15,7 +15,7 @@ MonoBehaviour:
   m_DefaultSprite: {fileID: 2403724249865808194, guid: 82453aa3ed9f6f0449867c4b0418506f,
     type: 3}
   m_DefaultGameObject: {fileID: 0}
-  m_DefaultColliderType: 1
+  m_DefaultColliderType: 2
   m_TilingRules:
   - m_Id: 0
     m_Sprites:
@@ -274,3 +274,4 @@ MonoBehaviour:
     - {x: -1, y: 0, z: 0}
     m_RuleTransform: 0
   _tileData: {fileID: 11400000, guid: 968e4b8e23aa86f4a9b8222f14d5aafc, type: 2}
+  _ui: {fileID: 0}
