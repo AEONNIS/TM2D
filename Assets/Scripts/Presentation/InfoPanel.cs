@@ -1,6 +1,7 @@
 ﻿using TM2D.Model.Maps;
 using TM2D.Model.Tiles;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TM2D.Presentation
 {
@@ -8,6 +9,7 @@ namespace TM2D.Presentation
     {
         [SerializeField] private Transform _content;
         [SerializeField] private TileInfo _tileInfoTemplate;
+        [SerializeField] private Text _gridPosition;
 
         private TileInfo _backround;
         private TileInfo _foreground;
@@ -20,8 +22,10 @@ namespace TM2D.Presentation
         }
         #endregion
 
-        public void PresentTileInfo(LayerName mapLayerName, (GameTileData data, Sprite sprite) tile)
+        public void PresentTileInfo(Vector3Int gridPosition, LayerName mapLayerName, (GameTileData data, Sprite sprite) tile)
         {
+            _gridPosition.text = ((Vector2Int)gridPosition).ToString();
+
             if (mapLayerName == LayerName.Background)
                 _backround.Present(tile);
             else

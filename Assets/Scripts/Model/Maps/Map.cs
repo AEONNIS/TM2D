@@ -5,13 +5,12 @@ namespace TM2D.Model.Maps
 {
     public class Map : MonoBehaviour
     {
-        [SerializeField] private Grid _grid;
         [SerializeField] private MapLayer _background;
         [SerializeField] private MapLayer _foreground;
 
-        public (GameTileData, Sprite) GetTileData(LayerName layerName, Vector3 worldMousePosition)
+        public (GameTileData, Sprite) GetTileData(LayerName layerName, Vector3Int gridPosition)
         {
-            return SelectLayer(layerName).GetTileData(_grid.WorldToCell(worldMousePosition));
+            return SelectLayer(layerName).GetTileData(gridPosition);
         }
 
         private MapLayer SelectLayer(LayerName layerName)
