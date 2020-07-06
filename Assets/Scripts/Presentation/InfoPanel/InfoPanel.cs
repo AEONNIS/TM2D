@@ -2,39 +2,36 @@
 using TM2D.Model.Tiles;
 using UnityEngine;
 
-namespace TM2D.Presentation.InfoPanel
+namespace TM2D.Presentation
 {
     public class InfoPanel : MonoBehaviour
     {
-        private const string _floorLayerName = "Слой пола";
-        private const string _wallsLayerName = "Слой стен";
-
         [SerializeField] private Transform _content;
         [SerializeField] private TileInfo _tileInfoTemplate;
 
-        private TileInfo _floorTileInfo;
-        private TileInfo _wallsTileInfo;
+        private TileInfo _backround;
+        private TileInfo _foreground;
 
         #region Unity
         private void Start()
         {
-            InstantiatePanel(out _floorTileInfo, _floorLayerName);
-            InstantiatePanel(out _wallsTileInfo, _wallsLayerName);
+            InstantiatePanel(out _backround, LayerName.Background);
+            InstantiatePanel(out _foreground, LayerName.Foreground);
         }
         #endregion
 
-        public void PresentTileInfo(LayerType layerType, GameTileData tileData)
+        public void PresentTileInfo(LayerName mapLayerName, (GameTileData data, Sprite sprite) tile)
         {
-            if (layerType == LayerType.Floor)
-                _floorTileInfo.Present(tileData);
+            if (mapLayerName == LayerName.Background)
+                _backround.Present(tile);
             else
-                _wallsTileInfo.Present(tileData);
+                _foreground.Present(tile);
         }
 
-        private void InstantiatePanel(out TileInfo tileInfo, string layerName)
+        private void InstantiatePanel(out TileInfo tileInfo, LayerName mapLayerName)
         {
             tileInfo = Instantiate(_tileInfoTemplate, _content);
-            tileInfo.Init(layerName);
+            tileInfo.Init(mapLayerName);
         }
     }
 }

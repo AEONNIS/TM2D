@@ -190,7 +190,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0418\u041D\u0424\u041E \u041E \u0422\u0410\u0419\u041B\u0410\u0425:"
+  m_Text: "\u0418\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044F:"
 --- !u!222 &73286082
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -307,6 +307,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 171921948}
+  - component: {fileID: 171921949}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -334,6 +335,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -856, y: -482}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &171921949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171921947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40607e00ab2af14d93fa8c17606bae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mainCamera: {fileID: 519420031}
+  _infoPanel: {fileID: 1271734735}
+  _map: {fileID: 1727269926}
 --- !u!1 &185670686
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,8 +361,9 @@ GameObject:
   - component: {fileID: 185670687}
   - component: {fileID: 185670689}
   - component: {fileID: 185670688}
+  - component: {fileID: 185670690}
   m_Layer: 0
-  m_Name: WallsTilemap
+  m_Name: Foreground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,6 +1628,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &185670690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185670686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c0c847e80247458d69b0f47a12e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 1
+  _tilemap: {fileID: 185670689}
 --- !u!1 &206543412
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,8 +1653,9 @@ GameObject:
   - component: {fileID: 206543413}
   - component: {fileID: 206543415}
   - component: {fileID: 206543414}
+  - component: {fileID: 206543416}
   m_Layer: 0
-  m_Name: FloorTilemap
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9345,6 +9377,20 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &206543416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206543412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c0c847e80247458d69b0f47a12e0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: 0
+  _tilemap: {fileID: 206543415}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -9555,8 +9601,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1727269925}
   - component: {fileID: 1727269924}
+  - component: {fileID: 1727269926}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Map
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9590,6 +9637,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1727269926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727269923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4a84fc0aad50a4aae751325ad9e09a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grid: {fileID: 1727269924}
+  _background: {fileID: 206543416}
+  _foreground: {fileID: 185670690}
 --- !u!1 &2123859728
 GameObject:
   m_ObjectHideFlags: 0
