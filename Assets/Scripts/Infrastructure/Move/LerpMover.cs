@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace TM2D.Infrastructure
+namespace TM2D.Infrastructure.Move
 {
     public class LerpMover : MonoBehaviour, IMover
     {

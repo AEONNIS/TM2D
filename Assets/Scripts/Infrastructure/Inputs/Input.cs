@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace TM2D.Model.Inputs
+namespace TM2D.Infrastructure.Inputs
 {
     public class @Input : IInputActionCollection, IDisposable
     {

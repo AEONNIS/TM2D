@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace TM2D.Infrastructure
+namespace TM2D.Infrastructure.Move
 {
     public interface IMover
     {

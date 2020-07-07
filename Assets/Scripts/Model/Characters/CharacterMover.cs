@@ -1,4 +1,4 @@
-﻿using TM2D.Infrastructure;
+﻿using TM2D.Infrastructure.Move;
 using UnityEngine;
 
 namespace TM2D.Model.Characters
@@ -7,7 +7,8 @@ namespace TM2D.Model.Characters
     {
         [SerializeField] private MonoBehaviour _mover;
         [SerializeField] private Vector2Int _initPosition;
-        [SerializeField] private Vector2Int _endPosition;
+
+        private bool _isMoving;
 
         private IMover Mover => (IMover)_mover;
 
@@ -24,13 +25,16 @@ namespace TM2D.Model.Characters
         private void Start()
         {
             SetPosition(_initPosition);
-            MoveIn(_endPosition);
         }
         #endregion
 
         public void MoveIn(Vector2Int gridPosition)
         {
-            Mover.Move(transform, (Vector2)gridPosition, () => Debug.Log("Пришли"));
+            if (_isMoving == false)
+            {
+                _isMoving = true;
+                Mover.Move(transform, (Vector2)gridPosition, () => _isMoving = false);
+            }
         }
 
         private void SetPosition(Vector2Int gridPosition) => transform.position = (Vector3Int)gridPosition;

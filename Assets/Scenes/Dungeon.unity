@@ -13491,6 +13491,7 @@ GameObject:
   - component: {fileID: 717435262}
   - component: {fileID: 717435263}
   - component: {fileID: 717435261}
+  - component: {fileID: 717435266}
   - component: {fileID: 717435264}
   - component: {fileID: 717435265}
   m_Layer: 8
@@ -13599,7 +13600,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mover: {fileID: 717435265}
   _initPosition: {x: 16, y: 3}
-  _endPosition: {x: 20, y: 20}
 --- !u!114 &717435265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13612,8 +13612,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6f371058c3861b4db21d774d46367b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 8
   _deviationSquare: 0.01
+--- !u!114 &717435266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717435260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dedf964804e7b54e8936886b6051cad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _inputController: {fileID: 678656325}
+  _mover: {fileID: 717435264}
 --- !u!1 &1271734730
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace TM2D.Model.Inputs
+namespace TM2D.Infrastructure.Inputs
 {
     public class InputController : MonoBehaviour
     {
