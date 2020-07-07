@@ -13,7 +13,7 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - Map
   - 
   - 
   - 
@@ -41,7 +41,7 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Player
+  - name: Map
     uniqueID: 3686193179
     locked: 0
   - name: UI

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Tilemaps;
 
 namespace TM2D.Presentation
@@ -24,7 +25,8 @@ namespace TM2D.Presentation
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Vector3Int gridPosition = _grid.WorldToCell(_mainCamera.ScreenToWorldPoint(Input.mousePosition));
+            Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector3Int gridPosition = _grid.WorldToCell(worldPosition);
             BacklightTile(gridPosition);
             _ui.PresentTilesInfo(gridPosition);
         }
