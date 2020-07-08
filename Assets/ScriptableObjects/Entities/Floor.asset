@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abdd48718432cec4084f95c19721697a, type: 3}
-  m_Name: FloorRandomTile
+  m_Script: {fileID: 11500000, guid: 117ba0f1522eed749ae01c6c4ca435a6, type: 3}
+  m_Name: Floor
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -51,5 +51,6 @@ MonoBehaviour:
   - {fileID: 7810936717752353743, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: 3419707775326841495, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: -7245433517681746672, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
-  _tileData: {fileID: 11400000, guid: d0f92330d1cc630499115dbe95ab9c5c, type: 2}
-  _ui: {fileID: 0}
+  _soComponents:
+  - {fileID: 11400000, guid: c8708f1e293c96d4d8ecbe44bd60d1f3, type: 2}
+  - {fileID: 11400000, guid: 958d33fb3692e5849baa09e438fea25f, type: 2}

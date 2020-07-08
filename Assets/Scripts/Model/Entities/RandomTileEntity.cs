@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using TM2D.ECS;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace TM2D.Model.Entities
 {
-    [CreateAssetMenu(fileName = "RuleTileEntity", menuName = "TM2D/Model/Entities/RuleTileEntity")]
-    public class RuleTileEntity : RuleTile, IEntity
+    [CreateAssetMenu(fileName = "RandomTileEntity", menuName = "TM2D/Model/Entities/RandomTileEntity")]
+    public class RandomTileEntity : RandomTile, IEntity
     {
         [SerializeField] private List<ScriptableObjectComponent> _soComponents;
 

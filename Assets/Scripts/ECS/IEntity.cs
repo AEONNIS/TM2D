@@ -8,6 +8,6 @@ namespace TM2D.ECS
 
         void Add(IComponent component);
 
-        void Remove(IComponent component);
+        bool Remove(IComponent component);
     }
 }

@@ -6,7 +6,7 @@ SpriteAtlas:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DungeonAtlas
+  m_Name: Atlas
   m_EditorData:
     serializedVersion: 2
     textureSettings:
@@ -114,5 +114,5 @@ SpriteAtlas:
   - Player_1
   - Player_0
   - Player_2
-  m_Tag: DungeonAtlas
+  m_Tag: Atlas
   m_IsVariant: 0
