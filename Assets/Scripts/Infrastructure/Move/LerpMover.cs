@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace TM2D.Infrastructure.Move
 {
-    public class LerpMover : MonoBehaviour, IMover
+    public class LerpMover : Mover
     {
         [Range(0.01f, 100f)]
         [SerializeField] private float _speed = 0.2f;
@@ -13,7 +13,7 @@ namespace TM2D.Infrastructure.Move
 
         private Coroutine _routine;
 
-        public void Move(Transform target, Vector3 endPosition, Action onEnd = null)
+        public override void Move(Transform target, Vector3 endPosition, Action onEnd = null)
         {
             if (_routine != null)
                 StopCoroutine(_routine);
