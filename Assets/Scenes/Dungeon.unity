@@ -13626,7 +13626,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dedf964804e7b54e8936886b6051cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputController: {fileID: 678656325}
+  _input: {fileID: 678656325}
   _mover: {fileID: 717435264}
 --- !u!1 &1271734730
 GameObject:
