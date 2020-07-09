@@ -10,10 +10,10 @@ namespace TM2D.Presentation
 
         public void PresentTilesInfo(Vector3Int gridPosition)
         {
-            _infoPanel.PresentTileInfo(gridPosition, LayerName.Background,
-                                       _map.GetTileData(LayerName.Background, gridPosition));
-            _infoPanel.PresentTileInfo(gridPosition, LayerName.Foreground,
-                                       _map.GetTileData(LayerName.Foreground, gridPosition));
+            //_infoPanel.PresentTileInfo(gridPosition, LayerName.Background,
+            //                           _map.GetTileData(LayerName.Background, gridPosition));
+            //_infoPanel.PresentTileInfo(gridPosition, LayerName.Foreground,
+            //                           _map.GetTileData(LayerName.Foreground, gridPosition));
         }
     }
 }

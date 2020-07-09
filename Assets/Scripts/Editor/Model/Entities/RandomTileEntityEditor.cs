@@ -7,18 +7,18 @@ namespace TM2D.Editor.Model.Entities
     [CustomEditor(typeof(RandomTileEntity))]
     public class RandomTileEntityEditor : RandomTileEditor
     {
-        private SerializedProperty _soComponents;
+        private SerializedProperty _componentsContainer;
 
         private new void OnEnable()
         {
-            _soComponents = serializedObject.FindProperty(nameof(_soComponents));
+            _componentsContainer = serializedObject.FindProperty(nameof(_componentsContainer));
             base.OnEnable();
         }
 
         public override void OnInspectorGUI()
         {
             serializedObject.UpdateIfRequiredOrScript();
-            EditorGUILayout.PropertyField(_soComponents);
+            EditorGUILayout.PropertyField(_componentsContainer);
             serializedObject.ApplyModifiedPropertiesWithoutUndo();
 
             EditorGUILayout.Space(10);
