@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TM2D.Model.Components.Move
 {
-    public class LerpMoverData : MonoBehaviour, IComponent
+    public class LerpMoverData : MBComponent
     {
         [Range(0.01f, 100f)]
         [SerializeField] private float _speed = 8f;

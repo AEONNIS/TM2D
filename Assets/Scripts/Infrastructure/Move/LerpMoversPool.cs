@@ -58,7 +58,7 @@ namespace TM2D.Infrastructure.Move
         {
             LerpMover lerpMover = Instantiate(_lerpMoverTemplate, _content);
             _pool.Add(new EntityLerpMover(entity, lerpMover));
-            return _pool[_pool.Count];
+            return _pool[_pool.Count - 1];
         }
     }
 }

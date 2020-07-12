@@ -7,6 +7,7 @@ namespace TM2D.ECS
     [Serializable]
     public class ComponentsContainer : IComponentsContainer
     {
+        [SerializeField] private List<MBComponent> _mbComponents;
         [SerializeField] private List<SOComponent> _soComponents;
 
         private List<IComponent> _components = null;
@@ -32,7 +33,10 @@ namespace TM2D.ECS
         private void CreateComponentsIfNull()
         {
             if (_components == null)
-                _components = new List<IComponent>(_soComponents);
+            {
+                _components = new List<IComponent>(_mbComponents);
+                _components.AddRange(_soComponents);
+            }
         }
     }
 }

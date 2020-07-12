@@ -8,22 +8,25 @@ namespace TM2D.Model.Systems
 {
     public class LerpMoveSystem : ISystem
     {
-        [SerializeField] private LerpMoversPool _pool;
-
         private readonly ISystemsContainer _systemsContainer;
+        private readonly LerpMoversPool _pool;
 
-        public LerpMoveSystem(ISystemsContainer systemsContainer) => _systemsContainer = systemsContainer;
+        public LerpMoveSystem(ISystemsContainer systemsContainer, LerpMoversPool lerpMoversPool)
+        {
+            _systemsContainer = systemsContainer;
+            _pool = lerpMoversPool;
+        }
 
         public IEntity ProcessIfPossible(IEntity entity)
         {
-            (TransformData transformData, MoveEventV2Int moveEvent, LerpMoverData moverData) components =
+            (TransformData transformData, MoveEventV2Int moveEvent, LerpMoverData moverData) =
                                                                          GetComponentsIfAvailable(entity);
 
-            if (components.transformData != null && components.moveEvent != null && components.moverData != null)
-                _pool.Move(entity, components.transformData.Transform, (Vector2)components.moveEvent.Movement,
-                           components.moverData, () =>
+            if (transformData != null && moveEvent != null && moverData != null)
+                _pool.Move(entity, transformData.Transform, (Vector2)moveEvent.Movement,
+                           moverData, () =>
                 {
-                    entity.ComponentsContainer.Remove(components.moveEvent);
+                    entity.ComponentsContainer.Remove(moveEvent);
                     _systemsContainer.Process(entity);
                 });
 
