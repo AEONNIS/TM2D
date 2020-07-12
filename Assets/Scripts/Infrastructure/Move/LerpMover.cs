@@ -1,31 +1,29 @@
 ﻿using System;
 using System.Collections;
+using TM2D.Model.Components.Move;
 using UnityEngine;
 
 namespace TM2D.Infrastructure.Move
 {
-    public class LerpMover : Mover
+    public class LerpMover : MonoBehaviour
     {
-        [Range(0.01f, 100f)]
-        [SerializeField] private float _speed = 0.2f;
-        [Range(0.00001f, 1000f)]
-        [SerializeField] private float _deviationSquare = 0.00001f;
-
         private Coroutine _routine;
 
-        public override void Move(Transform target, Vector3 endPosition, Action onEnd = null)
+        public void Move(Transform target, Vector3 movement, LerpMoverData lerpMoverData, Action onEnd = null)
         {
             if (_routine != null)
                 StopCoroutine(_routine);
 
-            _routine = StartCoroutine(ToMove(target, endPosition, onEnd));
+            _routine = StartCoroutine(ToMove(target, movement, lerpMoverData, onEnd));
         }
 
-        private IEnumerator ToMove(Transform target, Vector3 endPosition, Action onEnd = null)
+        private IEnumerator ToMove(Transform target, Vector3 movement, LerpMoverData lerpMoverData, Action onEnd)
         {
-            while ((target.position - endPosition).sqrMagnitude > _deviationSquare)
+            Vector3 endPosition = target.position + movement;
+
+            while ((target.position - endPosition).sqrMagnitude > lerpMoverData.DeviationSquare)
             {
-                target.position = Vector3.Lerp(target.position, endPosition, _speed * Time.deltaTime);
+                target.position = Vector3.Lerp(target.position, endPosition, lerpMoverData.Speed * Time.deltaTime);
                 yield return null;
             }
 

@@ -7,7 +7,7 @@ namespace TM2D.ECS
     [Serializable]
     public class ComponentsContainer : IComponentsContainer
     {
-        [SerializeField] private List<ScriptableObjectComponent> _soComponents;
+        [SerializeField] private List<SOComponent> _soComponents;
 
         private List<IComponent> _components = null;
 

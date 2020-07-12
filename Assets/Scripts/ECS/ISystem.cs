@@ -1,4 +1,7 @@
 ﻿namespace TM2D.ECS
 {
-    public interface ISystem { }
+    public interface ISystem
+    {
+        IEntity ProcessIfPossible(IEntity entity);
+    }
 }

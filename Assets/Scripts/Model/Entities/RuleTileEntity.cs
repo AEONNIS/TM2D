@@ -8,6 +8,6 @@ namespace TM2D.Model.Entities
     {
         [SerializeField] private ComponentsContainer _componentsContainer;
 
-        public IComponentsContainer ComponentContainer => _componentsContainer;
+        public IComponentsContainer ComponentsContainer => _componentsContainer;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace TM2D.Model.Components
 {
     [CreateAssetMenu(fileName = "InfoData", menuName = "TM2D/Model/Components/InfoData")]
-    public class InfoData : ScriptableObjectComponent
+    public class InfoData : SOComponent
     {
         [SerializeField] private string _name;
         [TextArea(1, 5)]
