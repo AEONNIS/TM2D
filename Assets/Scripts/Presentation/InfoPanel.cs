@@ -1,5 +1,4 @@
 ﻿using TM2D.Model.Maps;
-using TM2D.Model.Tiles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -22,15 +21,15 @@ namespace TM2D.Presentation
         }
         #endregion
 
-        public void PresentTileInfo(Vector3Int gridPosition, LayerName mapLayerName, (GameTileData data, Sprite sprite) tile)
-        {
-            _gridPosition.text = ((Vector2Int)gridPosition).ToString();
+        //public void PresentTileInfo(Vector3Int gridPosition, LayerName mapLayerName, (GameTileData data, Sprite sprite) tile)
+        //{
+        //    _gridPosition.text = ((Vector2Int)gridPosition).ToString();
 
-            if (mapLayerName == LayerName.Background)
-                _backround.Present(tile);
-            else
-                _foreground.Present(tile);
-        }
+        //    if (mapLayerName == LayerName.Background)
+        //        _backround.Present(tile);
+        //    else
+        //        _foreground.Present(tile);
+        //}
 
         private void InstantiatePanel(out TileInfo tileInfo, LayerName mapLayerName)
         {

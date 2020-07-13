@@ -1,4 +1,4 @@
-// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/Dungeon/Input.inputactions'
+// GENERATED AUTOMATICALLY FROM 'Assets/Inputs/Input.inputactions'
 
 using System;
 using System.Collections;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace TM2D.Infrastructure.Inputs
+namespace TM2D.Infrastructure
 {
     public class @Input : IInputActionCollection, IDisposable
     {

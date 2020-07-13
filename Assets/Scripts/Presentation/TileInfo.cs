@@ -1,5 +1,4 @@
 ﻿using TM2D.Model.Maps;
-using TM2D.Model.Tiles;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,22 +19,22 @@ namespace TM2D.Presentation
             Hide();
         }
 
-        public void Present((GameTileData data, Sprite sprite) tile)
-        {
-            if (tile.data != null)
-            {
-                _type.text = tile.data.Type;
-                _name.text = tile.data.Name;
-                _image.sprite = tile.sprite;
-                _description.text = tile.data.Description;
-                _passability.text = tile.data.Passability ? "+" : "-";
-                gameObject.SetActive(true);
-            }
-            else
-            {
-                Hide();
-            }
-        }
+        //public void Present((GameTileData data, Sprite sprite) tile)
+        //{
+        //    if (tile.data != null)
+        //    {
+        //        _type.text = tile.data.Type;
+        //        _name.text = tile.data.Name;
+        //        _image.sprite = tile.sprite;
+        //        _description.text = tile.data.Description;
+        //        _passability.text = tile.data.Passability ? "+" : "-";
+        //        gameObject.SetActive(true);
+        //    }
+        //    else
+        //    {
+        //        Hide();
+        //    }
+        //}
 
         public void Hide() => gameObject.SetActive(false);
     }
