@@ -2,6 +2,6 @@
 {
     public interface IEntity
     {
-        IComponentsContainer ComponentsContainer { get; }
+        IComponentsContainer Components { get; }
     }
 }

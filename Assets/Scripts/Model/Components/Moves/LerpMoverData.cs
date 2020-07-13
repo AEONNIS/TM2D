@@ -1,7 +1,7 @@
 ﻿using TM2D.ECS;
 using UnityEngine;
 
-namespace TM2D.Model.Components.Move
+namespace TM2D.Model.Components
 {
     public class LerpMoverData : MBComponent
     {

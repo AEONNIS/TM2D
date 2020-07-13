@@ -1,11 +1,8 @@
-﻿using TM2D.ECS;
-using UnityEngine;
-using UnityEngine.Tilemaps;
+﻿using UnityEngine;
 
-namespace TM2D.Model.Entities
+namespace TM2D.ECS
 {
-    [CreateAssetMenu(fileName = "RandomTileEntity", menuName = "TM2D/Model/Entities/RandomTileEntity")]
-    public class RandomTileEntity : RandomTile, IEntity
+    public class MBEntity : MonoBehaviour, IEntity
     {
         [SerializeField] private ComponentsContainer _components = new ComponentsContainer();
 

@@ -1,10 +1,10 @@
 ﻿using TM2D.ECS;
 
-namespace TM2D.Infrastructure.Move
+namespace TM2D.Infrastructure
 {
-    public class EntityLerpMover
+    public class MovingEntity
     {
-        public EntityLerpMover(IEntity entity, LerpMover mover)
+        public MovingEntity(IEntity entity, LerpMover mover)
         {
             Entity = entity;
             Mover = mover;

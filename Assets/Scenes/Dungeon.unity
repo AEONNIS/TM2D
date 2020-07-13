@@ -4519,9 +4519,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307504378}
+  - component: {fileID: 307504380}
   - component: {fileID: 307504379}
   m_Layer: 0
-  m_Name: LerpMoversPool
+  m_Name: MoveSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4554,8 +4555,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _content: {fileID: 307504378}
-  _lerpMoverTemplate: {fileID: 4468614681112622996, guid: f015e08a3dc232f4fbf2bbd02872b77a,
+  _moverTemplate: {fileID: 4468614681112622996, guid: f015e08a3dc232f4fbf2bbd02872b77a,
     type: 3}
+--- !u!114 &307504380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307504377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e90c6ae000993b46911f0c4b8aa45f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _systems: {fileID: 1784984445}
+  _pool: {fileID: 307504379}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -4666,7 +4681,6 @@ GameObject:
   m_Component:
   - component: {fileID: 678656324}
   - component: {fileID: 678656325}
-  - component: {fileID: 678656326}
   m_Layer: 0
   m_Name: InputController
   m_TagString: Untagged
@@ -4700,20 +4714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fbe4977378d38a4490a9c49f664a235, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &678656326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 678656323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dedf964804e7b54e8936886b6051cad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _input: {fileID: 678656325}
-  _systemsContainer: {fileID: 1784984445}
+  _systems: {fileID: 1784984445}
   _player: {fileID: 717435265}
 --- !u!1 &717435260
 GameObject:
@@ -4845,7 +4846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94366a3c4c57ce04bb09eff7ec33a6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _componentsContainer:
+  _components:
     _mbComponents:
     - {fileID: 717435264}
     - {fileID: 717435266}
@@ -4862,7 +4863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a33a8fb24b572043b7975502b46b3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2
+  _speed: 8
   _deviationSquare: 0.01
 --- !u!1 &1271734730
 GameObject:
@@ -5140,7 +5141,7 @@ GameObject:
   - component: {fileID: 1784984446}
   - component: {fileID: 1784984445}
   m_Layer: 0
-  m_Name: SystemsContainer
+  m_Name: Systems
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5158,7 +5159,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92617fb54352bae4482d3a78751b5b16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lerpMoversPool: {fileID: 307504379}
+  _mbSystems:
+  - {fileID: 307504380}
+  _soSystems: []
 --- !u!4 &1784984446
 Transform:
   m_ObjectHideFlags: 0
