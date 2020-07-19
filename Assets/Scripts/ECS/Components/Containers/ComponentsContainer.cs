@@ -7,8 +7,8 @@ namespace TM2D.ECS
     [Serializable]
     public class ComponentsContainer : IComponentsContainer
     {
-        [SerializeField] private List<MBComponent> _mbComponents;
-        [SerializeField] private List<SOComponent> _soComponents;
+        [SerializeField] private List<MBComponent> _mBComponents = new List<MBComponent>();
+        [SerializeField] private List<SOComponent> _sOComponents = new List<SOComponent>();
 
         private List<IComponent> _components = null;
 
@@ -47,8 +47,8 @@ namespace TM2D.ECS
         {
             if (_components == null)
             {
-                _components = new List<IComponent>(_mbComponents);
-                _components.AddRange(_soComponents);
+                _components = new List<IComponent>(_mBComponents);
+                _components.AddRange(_sOComponents);
             }
         }
     }

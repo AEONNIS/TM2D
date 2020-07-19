@@ -51,7 +51,8 @@ MonoBehaviour:
   - {fileID: 7810936717752353743, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: 3419707775326841495, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
   - {fileID: -7245433517681746672, guid: 82453aa3ed9f6f0449867c4b0418506f, type: 3}
-  _componentsContainer:
-    _soComponents:
+  _components:
+    _mBComponents: []
+    _sOComponents:
     - {fileID: 11400000, guid: c8708f1e293c96d4d8ecbe44bd60d1f3, type: 2}
     - {fileID: 11400000, guid: 958d33fb3692e5849baa09e438fea25f, type: 2}

@@ -12,33 +12,31 @@ namespace TM2D.Model.Systems
 
         public override IEntity ProcessIfPossible(IEntity entity)
         {
-            (TransformData transformData, MoveV2IntEvent moveEvent, LerpMoverData moverData) =
-                                                                    GetComponentsIfAvailable(entity);
+            (TransformData source, MoveV2IntEvent moveEvent, LerpMoverData moverData) =
+                GetComponentsIfAvailable(entity);
 
-            if (transformData != null && moveEvent != null && moverData != null)
+            if (source != null && moveEvent != null && moverData != null)
             {
-                _pool.Move(entity, transformData.Transform, (Vector2)moveEvent.Movement, moverData,
+                _pool.Move(entity, source.Transform, (Vector2)moveEvent.Movement, moverData,
                            () => entity.Components.Remove(moveEvent));
             }
-
-            return null;
+            return entity;
         }
 
         private (TransformData, MoveV2IntEvent, LerpMoverData) GetComponentsIfAvailable(IEntity entity)
         {
-            (TransformData transformData, MoveV2IntEvent moveEvent, LerpMoverData moverData) components =
-                                                                                       (null, null, null);
+            (TransformData source, MoveV2IntEvent moveEvent, LerpMoverData moverData) components =
+                (null, null, null);
 
             foreach (var component in entity.Components.Get())
             {
                 if (component is TransformData)
-                    components.transformData = component as TransformData;
+                    components.source = component as TransformData;
                 else if (component is MoveV2IntEvent)
                     components.moveEvent = component as MoveV2IntEvent;
                 else if (component is LerpMoverData)
                     components.moverData = component as LerpMoverData;
             }
-
             return components;
         }
     }

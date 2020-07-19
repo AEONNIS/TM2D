@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TM2D.ECS;
+using UnityEngine;
 
 namespace TM2D.Model.Maps
 {
@@ -7,10 +8,10 @@ namespace TM2D.Model.Maps
         [SerializeField] private MapLayer _background;
         [SerializeField] private MapLayer _foreground;
 
-        //public (GameTileData, Sprite) GetTileData(LayerName layerName, Vector3Int gridPosition)
-        //{
-        //    return SelectLayer(layerName).GetTileData(gridPosition);
-        //}
+        public IEntity GetTileIn(LayerName layer, Vector3Int gridposition)
+        {
+            return SelectLayer(layer).GetTileIn(gridposition);
+        }
 
         private MapLayer SelectLayer(LayerName layerName)
         {

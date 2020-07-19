@@ -9,10 +9,12 @@ namespace TM2D.Model.Entities
     {
         [SerializeField] private ComponentsContainer _components = new ComponentsContainer();
 
-        #region Unity
-        private void Awake() => _components.Init();
-        #endregion
+        public IComponentsContainer Components => GetComponents();
 
-        public IComponentsContainer Components => _components;
+        private IComponentsContainer GetComponents()
+        {
+            _components.Init();
+            return _components;
+        }
     }
 }
