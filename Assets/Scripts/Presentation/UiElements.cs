@@ -42,7 +42,7 @@ namespace TM2D.Presentation
         private void PresentProperty(IUiComponent uiComponent, PropertyInfo property, UiText textTemplate, Transform uiContent)
         {
             UiText text = Instantiate(textTemplate, uiContent);
-            text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
+            //text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
         }
     }
 }
