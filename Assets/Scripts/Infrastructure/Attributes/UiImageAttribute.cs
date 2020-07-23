@@ -5,8 +5,8 @@ namespace TM2D.Infrastructure.Attributes
     [AttributeUsage(AttributeTargets.Property)]
     public class UiImageAttribute : Attribute
     {
-        public string Name { get; }
+        public string Label { get; }
 
-        public UiImageAttribute(string name) => Name = name;
+        public UiImageAttribute(string label) => Label = label;
     }
 }

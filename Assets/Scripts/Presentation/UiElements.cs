@@ -11,28 +11,38 @@ namespace TM2D.Presentation
         [SerializeField] private UiText _textTemplate;
         [SerializeField] private UiImage _imageTemplate;
 
-        public void InstantiateElement(IComponent component, Transform content)
+        public void PresentAllUiComponents(IEntity entity, Transform uiContent)
         {
-            Type componentType = component.GetType();
-            UiComponentAttribute componentAttribute = (UiComponentAttribute)Attribute.
-                GetCustomAttribute(componentType, typeof(UiComponentAttribute));
-
-            if (componentAttribute != null)
+            foreach (var component in entity.Components.Get())
             {
-                PropertyInfo[] properties = componentType.GetProperties();
-                foreach (var property in properties)
+                if (component is IUiComponent)
                 {
-                    Type propertyType = property.GetType();
-                    UiBoolAttribute uiBoolValueAttribute = (UiBoolAttribute)Attribute.
-                        GetCustomAttribute(propertyType, typeof(UiBoolAttribute));
 
-                    if (uiBoolValueAttribute != null)
-                    {
-                        UiImage uiBoolField = Instantiate(_imageTemplate, content);
-                        uiBoolField.SetField()
-                    }
                 }
             }
+        }
+
+        private void Present(IUiComponent uiComponent, Transform uiContent)
+        {
+            Type componentType = uiComponent.GetType();
+            PropertyInfo[] properties = componentType.GetProperties();
+            foreach (var property in properties)
+            {
+                Type propertyType = property.GetType();
+                UiTextAttribute textAttribute = (UiTextAttribute)Attribute.GetCustomAttribute(propertyType, typeof(UiTextAttribute));
+
+                if (textAttribute != null)
+                {
+                    UiText text = Instantiate(_textTemplate, uiContent);
+                    text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
+                }
+            }
+        }
+
+        private void PresentProperty(IUiComponent uiComponent, PropertyInfo property, UiText textTemplate, Transform uiContent)
+        {
+            UiText text = Instantiate(textTemplate, uiContent);
+            text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
         }
     }
 }
