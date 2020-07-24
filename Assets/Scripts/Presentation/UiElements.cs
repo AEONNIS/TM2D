@@ -6,43 +6,53 @@ using UnityEngine;
 
 namespace TM2D.Presentation
 {
-    public class UiElements : MonoBehaviour
+    public class UIElements : MonoBehaviour
     {
-        [SerializeField] private UiText _textTemplate;
-        [SerializeField] private UiImage _imageTemplate;
+        [SerializeField] private UIText _textTemplate;
+        [SerializeField] private UIImage _imageTemplate;
 
-        public void PresentAllUiComponents(IEntity entity, Transform uiContent)
+        public void PresentAllUiComponents(IEntity entity, Transform content)
         {
             foreach (var component in entity.Components.Get())
             {
-                if (component is IUiComponent)
-                {
-
-                }
+                if (component is IUIComponent)
+                    Present(component as IUIComponent, content);
             }
         }
 
-        private void Present(IUiComponent uiComponent, Transform uiContent)
+        private void Present(IUIComponent component, Transform content)
         {
-            Type componentType = uiComponent.GetType();
-            PropertyInfo[] properties = componentType.GetProperties();
+            PropertyInfo[] properties = component.GetType().GetProperties();
             foreach (var property in properties)
             {
                 Type propertyType = property.GetType();
-                UiTextAttribute textAttribute = (UiTextAttribute)Attribute.GetCustomAttribute(propertyType, typeof(UiTextAttribute));
-
-                if (textAttribute != null)
-                {
-                    UiText text = Instantiate(_textTemplate, uiContent);
-                    text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
-                }
+                TryPresentPropertyAs(_textTemplate, content, component, property, propertyType);
+                TryPresentPropertyAs(_imageTemplate, content, component, property, propertyType);
             }
         }
 
-        private void PresentProperty(IUiComponent uiComponent, PropertyInfo property, UiText textTemplate, Transform uiContent)
+        private bool TryPresentPropertyAs(UIText textTemplate, Transform content, IUIComponent component, PropertyInfo property, Type propertyType)
         {
-            UiText text = Instantiate(textTemplate, uiContent);
-            text.Set(textAttribute.Label, (string)property.GetValue(uiComponent));
+            UITextAttribute textAttribute = (UITextAttribute)Attribute.GetCustomAttribute(propertyType, typeof(UITextAttribute));
+            if (textAttribute != null)
+            {
+                UIText text = Instantiate(textTemplate, content);
+                text.Set(textAttribute.Label, (string)property.GetValue(component));
+                return true;
+            }
+            return false;
+        }
+
+        private bool TryPresentPropertyAs(UIImage imageTemplate, Transform content, IUIComponent component, PropertyInfo property, Type propertyType)
+        {
+            UIImageAttribute imageAttribute = (UIImageAttribute)Attribute.GetCustomAttribute(propertyType, typeof(UIImageAttribute));
+            if (imageAttribute != null)
+            {
+                UIImage image = Instantiate(imageTemplate, content);
+                image.Set(imageAttribute.Label, (Sprite)property.GetValue(component));
+                return true;
+            }
+            return false;
         }
     }
 }

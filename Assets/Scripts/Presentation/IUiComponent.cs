@@ -2,5 +2,5 @@
 
 namespace TM2D.Presentation
 {
-    public interface IUiComponent : IComponent { }
+    public interface IUIComponent : IComponent { }
 }

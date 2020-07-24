@@ -3,10 +3,10 @@
 namespace TM2D.Infrastructure.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class UiImageAttribute : Attribute
+    public class UIImageAttribute : Attribute
     {
         public string Label { get; }
 
-        public UiImageAttribute(string label) => Label = label;
+        public UIImageAttribute(string label) => Label = label;
     }
 }

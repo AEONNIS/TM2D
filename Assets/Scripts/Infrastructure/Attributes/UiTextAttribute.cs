@@ -3,10 +3,10 @@
 namespace TM2D.Infrastructure.Attributes
 {
     [AttributeUsage(AttributeTargets.Property)]
-    public class UiTextAttribute : Attribute
+    public class UITextAttribute : Attribute
     {
         public string Label { get; }
 
-        public UiTextAttribute(string label) => Label = label;
+        public UITextAttribute(string label) => Label = label;
     }
 }

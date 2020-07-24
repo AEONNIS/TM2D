@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 namespace TM2D.Presentation
 {
-    public class UiText : MonoBehaviour
+    public class UIText : MonoBehaviour
     {
         [SerializeField] private Text _label;
         [SerializeField] private Text _value;
