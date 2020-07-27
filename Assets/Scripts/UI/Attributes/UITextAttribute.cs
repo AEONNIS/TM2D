@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TM2D.Infrastructure.Attributes
+namespace TM2D.UI
 {
     [AttributeUsage(AttributeTargets.Property)]
     public class UITextAttribute : Attribute

@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace TM2D.Presentation
+namespace TM2D.UI
 {
-    public class UIText : MonoBehaviour
+    public class UITextElement : MonoBehaviour
     {
         [SerializeField] private Text _label;
         [SerializeField] private Text _value;

@@ -14,7 +14,7 @@ TagManager:
   - 
   - 
   - Map
-  - 
+  - Characters
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Map
     uniqueID: 3686193179
+    locked: 0
+  - name: Characters
+    uniqueID: 484550201
     locked: 0
   - name: UI
     uniqueID: 1963887929
