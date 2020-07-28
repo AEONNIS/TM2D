@@ -9,14 +9,28 @@ namespace TM2D.UI
         [SerializeField] private string _layerLabel;
         [SerializeField] private UITextElement _layer;
         [SerializeField] private Transform _content;
-        [SerializeField] private UIElements _uIElements;
 
-        public void Init(string layerName) => _layer.Set(_layerLabel, layerName);
+        private UIElements _uIElements;
+
+        public void Init(string layerName, UIElements uIElements)
+        {
+            _layer.Set(_layerLabel, layerName);
+            _uIElements = uIElements;
+            gameObject.SetActive(false);
+        }
 
         public void Present(IEntity entity)
         {
-            Clear();
-            _uIElements.PresentAllUIComponents(entity, _content);
+            if (entity != null)
+            {
+                gameObject.SetActive(true);
+                Clear();
+                _uIElements.PresentAllUIComponents(entity, _content);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
         }
 
         private void Clear()

@@ -12,11 +12,7 @@ namespace TM2D.Model.Maps
         public IEntity GetTileIn(Vector3Int gridPosition)
         {
             TileBase tileBase = _tilemap.GetTile(gridPosition);
-
-            if (tileBase != null && tileBase is IEntity)
-                return tileBase as IEntity;
-            else
-                return null;
+            return (tileBase != null && tileBase is IEntity) ? tileBase as IEntity : null;
         }
     }
 

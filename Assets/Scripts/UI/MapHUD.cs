@@ -25,7 +25,7 @@ namespace TM2D.UI
             Vector3 worldPosition = _mainCamera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Vector3Int gridPosition = _grid.WorldToCell(worldPosition);
             BacklightTile(gridPosition);
-            _userInterface.PresentTilesInfo(gridPosition);
+            _userInterface.PresentEntitiesInfoIn(gridPosition);
         }
         #endregion
 

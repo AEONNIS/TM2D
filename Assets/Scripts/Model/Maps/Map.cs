@@ -8,17 +8,11 @@ namespace TM2D.Model.Maps
         [SerializeField] private MapLayer _background;
         [SerializeField] private MapLayer _foreground;
 
-        public IEntity GetTileIn(LayerName layer, Vector3Int gridposition)
+        public IEntity GetTileEntityIn(LayerName layer, Vector3Int gridposition)
         {
             return SelectLayer(layer).GetTileIn(gridposition);
         }
 
-        private MapLayer SelectLayer(LayerName layerName)
-        {
-            if (layerName == LayerName.Background)
-                return _background;
-            else
-                return _foreground;
-        }
+        private MapLayer SelectLayer(LayerName layerName) => layerName == LayerName.Background ? _background : _foreground;
     }
 }

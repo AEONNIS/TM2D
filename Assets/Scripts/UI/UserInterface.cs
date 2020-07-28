@@ -1,5 +1,4 @@
-﻿using TM2D.ECS;
-using TM2D.Model.Maps;
+﻿using TM2D.Model.Maps;
 using UnityEngine;
 
 namespace TM2D.UI
@@ -9,15 +8,10 @@ namespace TM2D.UI
         [SerializeField] private Map _map;
         [SerializeField] private InfoPanel _infoPanel;
 
-        public void PresentTilesInfo(Vector3Int gridPosition)
-        {
-            //_infoPanel.PresentTileInfo(gridPosition, LayerName.Background,
-            //                           _map.GetTileData(LayerName.Background, gridPosition));
-            //_infoPanel.PresentTileInfo(gridPosition, LayerName.Foreground,
-            //                           _map.GetTileData(LayerName.Foreground, gridPosition));
+        public void PresentEntitiesInfoIn(Vector3Int cursorPosition) => _infoPanel.Present(cursorPosition);
 
-            IEntity entity = _map.GetTileIn(LayerName.Background, gridPosition);
-            _infoPanel.Present(entity);
-        }
+        #region Unity
+        private void Awake() => _infoPanel.Init();
+        #endregion
     }
 }

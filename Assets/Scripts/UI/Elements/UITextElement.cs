@@ -13,5 +13,7 @@ namespace TM2D.UI
             _label.text = label;
             _value.text = value;
         }
+
+        public void Set(string value) => _value.text = value;
     }
 }
