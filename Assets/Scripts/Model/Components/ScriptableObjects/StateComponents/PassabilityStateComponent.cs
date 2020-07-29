@@ -9,7 +9,7 @@ namespace TM2D.Model.Components
     {
         [SerializeField] private bool _passability;
 
-        [UIText("Проходимость")]
+        [UIBool("Проходимость")]
         public bool Passability => _passability;
     }
 }

@@ -1,4 +1,5 @@
-﻿using TM2D.Model.Maps;
+﻿using TM2D.ECS;
+using TM2D.Model.Maps;
 using UnityEngine;
 
 namespace TM2D.UI
@@ -10,6 +11,7 @@ namespace TM2D.UI
         [SerializeField] private Transform _content;
         [SerializeField] private UIElements _uIElements;
         [SerializeField] private Map _map;
+        [SerializeField] private Vector2 _imageElementSize;
 
         private InfoModule _background;
         private InfoModule _foreground;
@@ -24,8 +26,10 @@ namespace TM2D.UI
         public void Present(Vector3Int cursorPosition)
         {
             _cursorPosition.Set(cursorPosition.ToString());
-            _background.Present(_map.GetTileEntityIn(LayerName.Background, cursorPosition));
-            _foreground.Present(_map.GetTileEntityIn(LayerName.Foreground, cursorPosition));
+            (IEntity entity, Sprite sprite) backgroundTile = _map.GetTileIn(LayerName.Background, cursorPosition);
+            (IEntity entity, Sprite sprite) foregroundTile = _map.GetTileIn(LayerName.Foreground, cursorPosition);
+            _background.Present(backgroundTile.entity, (backgroundTile.sprite, _imageElementSize));
+            _foreground.Present(foregroundTile.entity, (foregroundTile.sprite, _imageElementSize));
         }
 
         private InfoModule SetModule(LayerName layerName)

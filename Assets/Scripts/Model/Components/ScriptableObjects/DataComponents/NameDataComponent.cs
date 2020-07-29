@@ -9,7 +9,7 @@ namespace TM2D.Model.Components
     {
         [SerializeField] private string _name;
 
-        [UIText("Название")]
+        [UIString("Название")]
         public string Name => _name;
     }
 }

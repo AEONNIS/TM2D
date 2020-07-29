@@ -9,6 +9,7 @@ namespace TM2D.UI
         [SerializeField] private string _layerLabel;
         [SerializeField] private UITextElement _layer;
         [SerializeField] private Transform _content;
+        [SerializeField] private UIImageElement _imageTemplate;
 
         private UIElements _uIElements;
 
@@ -19,13 +20,20 @@ namespace TM2D.UI
             gameObject.SetActive(false);
         }
 
-        public void Present(IEntity entity)
+        public void Present(IEntity entity, (Sprite sprite, Vector2 spriteSize) element = default)
         {
             if (entity != null)
             {
-                gameObject.SetActive(true);
                 Clear();
+
+                if (element != default)
+                {
+                    UIImageElement image = Instantiate(_imageTemplate, _content);
+                    image.Set(element.sprite, element.spriteSize);
+                }
+
                 _uIElements.PresentAllUIComponents(entity, _content);
+                gameObject.SetActive(true);
             }
             else
             {

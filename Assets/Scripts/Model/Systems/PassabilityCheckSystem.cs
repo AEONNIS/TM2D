@@ -41,7 +41,7 @@ namespace TM2D.Model.Systems
 
         private IEntity GetTileInDestination(LayerName layer, Vector3Int destinationPosition)
         {
-            return _map.GetTileEntityIn(layer, destinationPosition);
+            return _map.GetEntityIn(layer, destinationPosition);
         }
 
         private bool TileIsPassable(IEntity tile)

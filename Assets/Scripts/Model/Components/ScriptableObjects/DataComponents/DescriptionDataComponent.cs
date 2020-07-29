@@ -10,7 +10,7 @@ namespace TM2D.Model.Components
         [TextArea(1, 5)]
         [SerializeField] private string _description;
 
-        [UIText("Описание")]
+        [UIString("Описание")]
         public string Description => _description;
     }
 }

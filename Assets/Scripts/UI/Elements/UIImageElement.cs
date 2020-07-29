@@ -5,13 +5,14 @@ namespace TM2D.UI
 {
     public class UIImageElement : MonoBehaviour
     {
-        [SerializeField] private Text _label;
-        [SerializeField] private Image _value;
+        [SerializeField] private RectTransform _rectTransform;
+        [SerializeField] private Image _image;
 
-        public void Set(string label, Sprite value)
+        public void Set(Sprite sprite, Vector2 size)
         {
-            _label.text = label;
-            _value.sprite = value;
+            _image.sprite = sprite;
+            _rectTransform.sizeDelta = size;
+            _image.rectTransform.sizeDelta = size;
         }
     }
 }
