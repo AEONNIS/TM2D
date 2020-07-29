@@ -39,5 +39,6 @@ MonoBehaviour:
   _components:
     _mBComponents: []
     _sOComponents:
-    - {fileID: 11400000, guid: fd36b0d3fdead094b93c7babb4007f6a, type: 2}
+    - {fileID: 11400000, guid: 9dd504fab3ffa3a42ad0046d055d8cf5, type: 2}
+    - {fileID: 11400000, guid: d40f6b8eea1ad514c88d5d62e4b45492, type: 2}
     - {fileID: 11400000, guid: f4f888075a74dbc4397b37f9025f52f5, type: 2}

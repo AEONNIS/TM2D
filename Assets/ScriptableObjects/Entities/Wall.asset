@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01b0ac057a421fe4ebb59a6cf3a9e5dd, type: 3}
-  m_Name: Walls
+  m_Name: Wall
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 2403724249865808194, guid: 82453aa3ed9f6f0449867c4b0418506f,
     type: 3}
@@ -276,5 +276,6 @@ MonoBehaviour:
   _components:
     _mBComponents: []
     _sOComponents:
-    - {fileID: 11400000, guid: 7f8d6b4af069bde47942b34fae9d30cc, type: 2}
+    - {fileID: 11400000, guid: f8a18c41615e8ec41961c8facf477dc9, type: 2}
+    - {fileID: 11400000, guid: 80808d3e9ed80c946bda25440ef86e78, type: 2}
     - {fileID: 11400000, guid: f4f888075a74dbc4397b37f9025f52f5, type: 2}

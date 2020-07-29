@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31b6dcf7eed1f834ebaeec4dfa0b28d3, type: 3}
-  m_Name: WallInfo
+  m_Script: {fileID: 11500000, guid: f896085039780ac499c71e8c4f22cb82, type: 3}
+  m_Name: ImpassableState
   m_EditorClassIdentifier: 
-  _name: "\u0421\u0442\u0435\u043D\u0430"
-  _description: "\u0422\u043E\u043B\u0441\u0442\u0430\u044F \u0438 \u043F\u0440\u043E\u0447\u043D\u0430\u044F
-    \u0441\u0442\u0435\u043D\u0430"
+  _passability: 0

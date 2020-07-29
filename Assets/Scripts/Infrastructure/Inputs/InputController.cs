@@ -26,15 +26,15 @@ namespace TM2D.Infrastructure
 
         private void CreateMovementBindings(IEntity entity)
         {
-            Player.Up.performed += context => MoveIfNotMoving(entity, new MoveV2IntEvent(Vector2Int.up));
-            Player.Down.performed += context => MoveIfNotMoving(entity, new MoveV2IntEvent(Vector2Int.down));
-            Player.Left.performed += context => MoveIfNotMoving(entity, new MoveV2IntEvent(Vector2Int.left));
-            Player.Right.performed += context => MoveIfNotMoving(entity, new MoveV2IntEvent(Vector2Int.right));
+            Player.Up.performed += context => MoveIfNotMoving(entity, new MoveV2IntEventComponent(Vector2Int.up));
+            Player.Down.performed += context => MoveIfNotMoving(entity, new MoveV2IntEventComponent(Vector2Int.down));
+            Player.Left.performed += context => MoveIfNotMoving(entity, new MoveV2IntEventComponent(Vector2Int.left));
+            Player.Right.performed += context => MoveIfNotMoving(entity, new MoveV2IntEventComponent(Vector2Int.right));
         }
 
-        private void MoveIfNotMoving(IEntity entity, MoveV2IntEvent moveV2IntEvent)
+        private void MoveIfNotMoving(IEntity entity, MoveV2IntEventComponent moveV2IntEvent)
         {
-            if (entity.Components.TypeMissing<MoveV2IntEvent>())
+            if (entity.Components.TypeMissing<MoveV2IntEventComponent>())
             {
                 entity.Components.Add(moveV2IntEvent);
                 _systems.Process(entity);

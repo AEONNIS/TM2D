@@ -12,7 +12,7 @@ namespace TM2D.Model.Systems
 
         public override IEntity ProcessIfPossible(IEntity entity)
         {
-            (TransformData source, MoveV2IntEvent moveEvent, LerpMoverData moverData) =
+            (TransformDataComponent source, MoveV2IntEventComponent moveEvent, LerpMoverDataComponent moverData) =
                 GetComponentsIfAvailable(entity);
 
             if (source != null && moveEvent != null && moverData != null)
@@ -23,19 +23,19 @@ namespace TM2D.Model.Systems
             return entity;
         }
 
-        private (TransformData, MoveV2IntEvent, LerpMoverData) GetComponentsIfAvailable(IEntity entity)
+        private (TransformDataComponent, MoveV2IntEventComponent, LerpMoverDataComponent) GetComponentsIfAvailable(IEntity entity)
         {
-            (TransformData source, MoveV2IntEvent moveEvent, LerpMoverData moverData) components =
+            (TransformDataComponent source, MoveV2IntEventComponent moveEvent, LerpMoverDataComponent moverData) components =
                 (null, null, null);
 
             foreach (var component in entity.Components.Get())
             {
-                if (component is TransformData)
-                    components.source = component as TransformData;
-                else if (component is MoveV2IntEvent)
-                    components.moveEvent = component as MoveV2IntEvent;
-                else if (component is LerpMoverData)
-                    components.moverData = component as LerpMoverData;
+                if (component is TransformDataComponent)
+                    components.source = component as TransformDataComponent;
+                else if (component is MoveV2IntEventComponent)
+                    components.moveEvent = component as MoveV2IntEventComponent;
+                else if (component is LerpMoverDataComponent)
+                    components.moverData = component as LerpMoverDataComponent;
             }
             return components;
         }

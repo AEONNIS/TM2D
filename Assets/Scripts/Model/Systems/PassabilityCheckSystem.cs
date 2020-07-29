@@ -12,7 +12,7 @@ namespace TM2D.Model.Systems
 
         public override IEntity ProcessIfPossible(IEntity entity)
         {
-            (TransformData source, MoveV2IntEvent toDestination) = GetComponentIfAvailable(entity);
+            (TransformDataComponent source, MoveV2IntEventComponent toDestination) = GetComponentIfAvailable(entity);
 
             if (source != null && toDestination != null && DestinationIsPassable(source, toDestination) == false)
                 entity.Components.Remove(toDestination);
@@ -20,21 +20,21 @@ namespace TM2D.Model.Systems
             return entity;
         }
 
-        private (TransformData, MoveV2IntEvent) GetComponentIfAvailable(IEntity entity)
+        private (TransformDataComponent, MoveV2IntEventComponent) GetComponentIfAvailable(IEntity entity)
         {
-            (TransformData source, MoveV2IntEvent toDestination) components = (null, null);
+            (TransformDataComponent source, MoveV2IntEventComponent toDestination) components = (null, null);
 
             foreach (var component in entity.Components.Get())
             {
-                if (component is TransformData)
-                    components.source = component as TransformData;
-                else if (component is MoveV2IntEvent)
-                    components.toDestination = component as MoveV2IntEvent;
+                if (component is TransformDataComponent)
+                    components.source = component as TransformDataComponent;
+                else if (component is MoveV2IntEventComponent)
+                    components.toDestination = component as MoveV2IntEventComponent;
             }
             return components;
         }
 
-        private Vector3Int GetDestinationPosition(TransformData source, MoveV2IntEvent toDestination)
+        private Vector3Int GetDestinationPosition(TransformDataComponent source, MoveV2IntEventComponent toDestination)
         {
             return Vector3Int.RoundToInt(source.transform.position) + (Vector3Int)toDestination.Movement;
         }
@@ -50,14 +50,14 @@ namespace TM2D.Model.Systems
             {
                 foreach (var component in tile.Components.Get())
                 {
-                    if (component is PassabilityState)
-                        return (component as PassabilityState).Passability;
+                    if (component is PassabilityStateComponent)
+                        return (component as PassabilityStateComponent).Passability;
                 }
             }
             return true;
         }
 
-        private bool DestinationIsPassable(TransformData source, MoveV2IntEvent toDestination)
+        private bool DestinationIsPassable(TransformDataComponent source, MoveV2IntEventComponent toDestination)
         {
             Vector3Int destinatinPosition = GetDestinationPosition(source, toDestination);
             return TileIsPassable(GetTileInDestination(LayerName.Background, destinatinPosition)) &&

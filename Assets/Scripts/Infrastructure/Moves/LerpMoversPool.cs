@@ -14,7 +14,7 @@ namespace TM2D.Infrastructure
         private readonly List<MovingEntity> _pool = new List<MovingEntity>();
 
         public void Move(IEntity entity, Transform target, Vector3 movement,
-                         LerpMoverData moverData, Action onEnd = null)
+                         LerpMoverDataComponent moverData, Action onEnd = null)
         {
             MovingEntity movingEntity = GetFree(entity);
             movingEntity.Mover.Move(target, movement, moverData, () =>

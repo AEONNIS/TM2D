@@ -9,7 +9,7 @@ namespace TM2D.Infrastructure
     {
         private Coroutine _routine;
 
-        public void Move(Transform target, Vector3 movement, LerpMoverData moverData, Action onEnd = null)
+        public void Move(Transform target, Vector3 movement, LerpMoverDataComponent moverData, Action onEnd = null)
         {
             if (_routine != null)
                 StopCoroutine(_routine);
@@ -17,7 +17,7 @@ namespace TM2D.Infrastructure
             _routine = StartCoroutine(ToMove(target, movement, moverData, onEnd));
         }
 
-        private IEnumerator ToMove(Transform target, Vector3 movement, LerpMoverData moverData, Action onEnd)
+        private IEnumerator ToMove(Transform target, Vector3 movement, LerpMoverDataComponent moverData, Action onEnd)
         {
             Vector3 endPosition = target.position + movement;
 

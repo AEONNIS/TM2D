@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace TM2D.Model.Components
 {
-    public class TransformData : MBComponent
+    public class TransformDataComponent : MBComponent
     {
         public Transform Transform => transform;
     }
